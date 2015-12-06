@@ -1,4 +1,4 @@
-package ua.basedao;
+package ua.basedao.entiti;
 
 import javax.persistence.*;
 

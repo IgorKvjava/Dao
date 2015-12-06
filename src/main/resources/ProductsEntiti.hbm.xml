@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="ua.basedao.ProductsEntiti" table="products" schema="classicmodels">
+    <class name="ua.basedao.entiti.ProductsEntiti" table="products" schema="classicmodels">
         <id name="productCode" column="productCode"/>
         <property name="productName" column="productName"/>
         <property name="productLine" column="productLine"/>

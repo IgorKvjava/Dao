@@ -4,8 +4,8 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="ua.basedao.OrderdetailsEntiti" table="orderdetails" schema="classicmodels">
-        <composite-id mapped="true" class="ua.basedao.OrderdetailsEntitiPK">
+    <class name="ua.basedao.entiti.OrderdetailsEntiti" table="orderdetails" schema="classicmodels">
+        <composite-id mapped="true" class="ua.basedao.entiti.OrderdetailsEntitiPK">
             <key-property name="orderNumber" column="orderNumber"/>
             <key-property name="productCode" column="productCode"/>
         </composite-id>

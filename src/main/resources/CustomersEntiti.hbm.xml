@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="ua.basedao.CustomersEntiti" table="customers" schema="classicmodels">
+    <class name="ua.basedao.entiti.CustomersEntiti" table="customers" schema="classicmodels">
         <id name="customerNumber" column="customerNumber"/>
         <property name="customerName" column="customerName"/>
         <property name="contactLastName" column="contactLastName"/>

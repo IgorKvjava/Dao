@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="ua.basedao.OfficesEntiti" table="offices" schema="classicmodels">
+    <class name="ua.basedao.entiti.OfficesEntiti" table="offices" schema="classicmodels">
         <id name="officeCode" column="officeCode"/>
         <property name="city" column="city"/>
         <property name="phone" column="phone"/>
