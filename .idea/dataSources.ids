@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - classicmodels@localhost" uuid="3e94e322-b560-4d48-95cd-5f011f55341f">
+    <database-info product="MySQL" version="5.5.46-0ubuntu0.14.04.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="classicmodels"/>
+      <table id="2" parent="1" name="customers"/>
+      <table id="3" parent="1" name="employees"/>
+      <table id="4" parent="1" name="offices"/>
+      <table id="5" parent="1" name="orderdetails"/>
+      <table id="6" parent="1" name="orders"/>
+      <table id="7" parent="1" name="payments"/>
+      <table id="8" parent="1" name="productlines"/>
+      <table id="9" parent="1" name="products"/>
+      <column id="10" parent="2" name="customerNumber">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="2" name="customerName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="12" parent="2" name="contactLastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="13" parent="2" name="contactFirstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="14" parent="2" name="phone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="15" parent="2" name="addressLine1">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="16" parent="2" name="addressLine2">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="17" parent="2" name="city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="18" parent="2" name="state">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="19" parent="2" name="postalCode">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="20" parent="2" name="country">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="21" parent="2" name="salesRepEmployeeNumber">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="22" parent="2" name="creditLimit">
+        <data-type>double</data-type>
+      </column>
+      <key id="23" parent="2" name="PRIMARY">
+        <columns>customerNumber</columns>
+        <primary>1</primary>
+      </key>
+      <column id="24" parent="3" name="employeeNumber">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="25" parent="3" name="lastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="26" parent="3" name="firstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="27" parent="3" name="extension">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="28" parent="3" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="29" parent="3" name="officeCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="30" parent="3" name="reportsTo">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="3" name="jobTitle">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="32" parent="3" name="PRIMARY">
+        <columns>employeeNumber</columns>
+        <primary>1</primary>
+      </key>
+      <column id="33" parent="4" name="officeCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="34" parent="4" name="city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="35" parent="4" name="phone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="36" parent="4" name="addressLine1">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="37" parent="4" name="addressLine2">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="38" parent="4" name="state">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="39" parent="4" name="country">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="40" parent="4" name="postalCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="41" parent="4" name="territory">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <key id="42" parent="4" name="PRIMARY">
+        <columns>officeCode</columns>
+        <primary>1</primary>
+      </key>
+      <column id="43" parent="5" name="orderNumber">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="5" name="productCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="45" parent="5" name="quantityOrdered">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="46" parent="5" name="priceEach">
+        <mandatory>1</mandatory>
+        <data-type>double</data-type>
+      </column>
+      <column id="47" parent="5" name="orderLineNumber">
+        <mandatory>1</mandatory>
+        <data-type>smallint(6)</data-type>
+      </column>
+      <key id="48" parent="5" name="PRIMARY">
+        <columns>orderNumber
+productCode</columns>
+        <primary>1</primary>
+      </key>
+      <column id="49" parent="6" name="orderNumber">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="50" parent="6" name="orderDate">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="51" parent="6" name="requiredDate">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="52" parent="6" name="shippedDate">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="53" parent="6" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="54" parent="6" name="comments">
+        <data-type>text</data-type>
+      </column>
+      <column id="55" parent="6" name="customerNumber">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="56" parent="6" name="PRIMARY">
+        <columns>orderNumber</columns>
+        <primary>1</primary>
+      </key>
+      <column id="57" parent="7" name="customerNumber">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="7" name="checkNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="59" parent="7" name="paymentDate">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="60" parent="7" name="amount">
+        <mandatory>1</mandatory>
+        <data-type>double</data-type>
+      </column>
+      <key id="61" parent="7" name="PRIMARY">
+        <columns>customerNumber
+checkNumber</columns>
+        <primary>1</primary>
+      </key>
+      <column id="62" parent="8" name="productLine">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="63" parent="8" name="textDescription">
+        <data-type>varchar(4000)</data-type>
+      </column>
+      <column id="64" parent="8" name="htmlDescription">
+        <data-type>mediumtext</data-type>
+      </column>
+      <column id="65" parent="8" name="image">
+        <data-type>mediumblob</data-type>
+      </column>
+      <key id="66" parent="8" name="PRIMARY">
+        <columns>productLine</columns>
+        <primary>1</primary>
+      </key>
+      <column id="67" parent="9" name="productCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="68" parent="9" name="productName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(70)</data-type>
+      </column>
+      <column id="69" parent="9" name="productLine">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="70" parent="9" name="productScale">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="71" parent="9" name="productVendor">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="72" parent="9" name="productDescription">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="73" parent="9" name="quantityInStock">
+        <mandatory>1</mandatory>
+        <data-type>smallint(6)</data-type>
+      </column>
+      <column id="74" parent="9" name="buyPrice">
+        <mandatory>1</mandatory>
+        <data-type>double</data-type>
+      </column>
+      <column id="75" parent="9" name="MSRP">
+        <mandatory>1</mandatory>
+        <data-type>double</data-type>
+      </column>
+      <key id="76" parent="9" name="PRIMARY">
+        <columns>productCode</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

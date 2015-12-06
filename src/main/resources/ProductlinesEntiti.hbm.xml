@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ua.basedao.ProductlinesEntiti" table="productlines" schema="classicmodels">
+        <id name="productLine" column="productLine"/>
+        <property name="textDescription" column="textDescription"/>
+        <property name="htmlDescription" column="htmlDescription"/>
+        <property name="image" column="image"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ua.basedao.ProductsEntiti" table="products" schema="classicmodels">
+        <id name="productCode" column="productCode"/>
+        <property name="productName" column="productName"/>
+        <property name="productLine" column="productLine"/>
+        <property name="productScale" column="productScale"/>
+        <property name="productVendor" column="productVendor"/>
+        <property name="productDescription" column="productDescription"/>
+        <property name="quantityInStock" column="quantityInStock"/>
+        <property name="buyPrice" column="buyPrice"/>
+        <property name="msrp" column="MSRP"/>
+    </class>
+</hibernate-mapping>

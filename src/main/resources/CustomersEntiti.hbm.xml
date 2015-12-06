@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ua.basedao.CustomersEntiti" table="customers" schema="classicmodels">
+        <id name="customerNumber" column="customerNumber"/>
+        <property name="customerName" column="customerName"/>
+        <property name="contactLastName" column="contactLastName"/>
+        <property name="contactFirstName" column="contactFirstName"/>
+        <property name="phone" column="phone"/>
+        <property name="addressLine1" column="addressLine1"/>
+        <property name="addressLine2" column="addressLine2"/>
+        <property name="city" column="city"/>
+        <property name="state" column="state"/>
+        <property name="postalCode" column="postalCode"/>
+        <property name="country" column="country"/>
+        <property name="salesRepEmployeeNumber" column="salesRepEmployeeNumber"/>
+        <property name="creditLimit" column="creditLimit"/>
+    </class>
+</hibernate-mapping>
