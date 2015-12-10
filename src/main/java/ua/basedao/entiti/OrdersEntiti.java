@@ -2,6 +2,7 @@ package ua.basedao.entiti;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created by liny on 10.12.15.
@@ -10,9 +11,9 @@ import java.io.Serializable;
 @Table(name = "orders", schema = "classicmodels")
 public class OrdersEntiti {
     private int orderNumber;
-    private Serializable orderDate;
-    private Serializable requiredDate;
-    private Serializable shippedDate;
+    private Date orderDate;
+    private Date requiredDate;
+    private Date shippedDate;
     private String status;
     private String comments;
     private int customerNumber;
@@ -29,31 +30,31 @@ public class OrdersEntiti {
 
     @Basic
     @Column(name = "orderDate")
-    public Serializable getOrderDate() {
+    public Date getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Serializable orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
 
     @Basic
     @Column(name = "requiredDate")
-    public Serializable getRequiredDate() {
+    public Date getRequiredDate() {
         return requiredDate;
     }
 
-    public void setRequiredDate(Serializable requiredDate) {
+    public void setRequiredDate(Date requiredDate) {
         this.requiredDate = requiredDate;
     }
 
     @Basic
     @Column(name = "shippedDate")
-    public Serializable getShippedDate() {
+    public Date getShippedDate() {
         return shippedDate;
     }
 
-    public void setShippedDate(Serializable shippedDate) {
+    public void setShippedDate(Date shippedDate) {
         this.shippedDate = shippedDate;
     }
 
