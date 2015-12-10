@@ -74,7 +74,8 @@ public class Start {
         List resultNoShipped=session.createCriteria(OrdersEntiti.class).add(Restrictions.not(Restrictions.eq("status","Shipped"))).list();
         for (Iterator iterator = resultNoShipped.iterator(); iterator.hasNext();){
             OrdersEntiti ordersEntiti=(OrdersEntiti) iterator.next();
-            System.out.println("order Number= "+ordersEntiti.getOrderNumber()+" orderDate= "+ordersEntiti.getOrderDate()+" status - "+ordersEntiti.getStatus());
+            System.out.println("order Number= "+ordersEntiti.getOrderNumber()+" orderDate= "+ordersEntiti.getOrderDate()+" status - "+ordersEntiti.getStatus()+
+            " Costumer namber "+ordersEntiti.getCustomerNumber());
         }
         //System.out.println(resultNoShipped);
 
