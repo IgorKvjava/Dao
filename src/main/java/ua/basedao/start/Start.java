@@ -1,10 +1,10 @@
 package ua.basedao.start;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 import ua.basedao.entiti.CustomersEntiti;
+import ua.basedao.util.HibernateSessionFactory;
 
 import java.util.Iterator;
 import java.util.List;
@@ -14,37 +14,25 @@ import java.util.List;
  */
 public class Start {
     //
-    private static SessionFactory factory;
-    public static void main(String[] args){
-        //
-        try{
-            factory = new Configuration().configure().buildSessionFactory();
-        }catch (Throwable ex) {
-            System.err.println("Failed to create sessionFactory object." + ex);
-            throw new ExceptionInInitializerError(ex);
-        }
-        //
-        //CustomersEntiti customersEntiti=new CustomersEntiti();
-        Session session = factory.openSession();
-      Transaction tx = null;
-      try{
-         tx = session.beginTransaction();
-         List customers = session.createQuery("SELECT customerName FROM customers").list();
-         for (Iterator iterator =
-              employees.iterator(); iterator.hasNext();){
-             CustomersEntiti employee = (Employee) iterator.next();
-            System.out.print("First Name: " + employee.getFirstName());
-            System.out.print("  Last Name: " + employee.getLastName());
-            System.out.println("  Salary: " + employee.getSalary());
-         }
-         tx.commit();
-      }catch (HibernateException e) {
-         if (tx!=null) tx.rollback();
-         e.printStackTrace();
-      }finally {
-         session.close();
-      }
+    public static void main(String[] args) {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        System.out.println ("/nStart");
+        CustomersEntiti customersEntiti;
+        Criteria cr1 = session.createCriteria(CustomersEntiti.class);
+        cr1.add(Restrictions.eq("country", "France"));
+        List resultsFranse = cr1.list();
+        System.out.println("France");
+        System.out.println(resultsFranse);
+        Criteria cr2 = session.createCriteria(CustomersEntiti.class);
+        cr2.add(Restrictions.eq("country", "Spain"));
+        List resultsSpain = cr2.list();
+        System.out.println("Spain");
+        System.out.println(resultsSpain);
 
 
+
+        tx.commit();
+        session.close();
     }
 }
