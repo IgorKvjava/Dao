@@ -21,13 +21,13 @@ public class OrdersEntiti {
     @Override
     public String toString() {
         return "OrdersEntiti{" +
-                "orderNumber=" + orderNumber +
-                ", orderDate=" + orderDate +
-                ", requiredDate=" + requiredDate +
-                ", shippedDate=" + shippedDate +
-                ", status='" + status + '\'' +
-                ", comments='" + comments + '\'' +
-                ", customerNumber=" + customerNumber +
+                "orderNumber=   " + orderNumber +
+                ", orderDate=   " + orderDate +
+                ", requiredDate=    " + requiredDate +
+                ", shippedDate= " + shippedDate +
+                ", status=  '" + status + '\'' +
+                ", comments=    '" + comments + '\'' +
+                ", customerNumber=  " + customerNumber +
                 '}'+"\n";
     }
 

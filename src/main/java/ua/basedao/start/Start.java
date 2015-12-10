@@ -25,6 +25,7 @@ public class Start {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         System.out.println ("Start session");
+        // 1. Выбрать всех контрагентов из Франции или Испании
         //Choice the country France and Spain----------------------------------------------------------
         Criteria cr1 = session.createCriteria(CustomersEntiti.class);
         Criterion countryFrance=Restrictions.eq("country", "France");
@@ -35,6 +36,7 @@ public class Start {
         System.out.println("Customers for country: France and Spain");
         System.out.println(results);
         //----------------------------------------------------------------------------------------------------
+        //2. Выбрать всех контрагентов, имя контакта которых начинается на J и кредитный лимит больше 100 000
         //To choice contact FirstName starting with "J" and having credit limit more than 100 000-------------
         Criteria cr2 = session.createCriteria(CustomersEntiti.class);
         Criterion nameBeginJ=Restrictions.like("contactFirstName","J%");
@@ -46,6 +48,7 @@ public class Start {
         System.out.println("contact FirstName starting with -J- and having credit limit more than 100 000");
         System.out.println(resultsChoice);
         //----------------------------------------------------------------------------------------------
+        //3. Выбрать, в разбивке по месяцам, количество и сумму платежей за май-июль 2004-го
         Criteria criAmount = session.createCriteria(PaymentsEntiti.class);
         Date date1 = new Date(104,04,01);
         Date date2 = new Date(104,06,31);
@@ -56,6 +59,7 @@ public class Start {
         System.out.println("-----------Date Sort-------");
         System.out.println(resultsDateSort);
         //----------------------------------------------------------------------------------------------------------
+        //4. Выбрать платежи контрагентов из Франции
         Criteria crFrance = session.createCriteria(CustomersEntiti.class);
         crFrance.add(Restrictions.eq("country", "France"));
         List resultFranseId=crFrance.list();
@@ -66,8 +70,13 @@ public class Start {
            System.out.println("id = "+customersEntiti.getCustomerNumber() +" country - "+customersEntiti.getCountry()+" ");
             System.out.println(crPaymentsFrance.list());
         }
+        //5. Выбрать названия контрагентов, номера, даты и статусы заказов, не находящихся в статусе «Доставлено» (Shipped)
         List resultNoShipped=session.createCriteria(OrdersEntiti.class).add(Restrictions.not(Restrictions.eq("status","Shipped"))).list();
-        System.out.println(resultNoShipped);
+        for (Iterator iterator = resultNoShipped.iterator(); iterator.hasNext();){
+            OrdersEntiti ordersEntiti=(OrdersEntiti) iterator.next();
+            System.out.println("order Number= "+ordersEntiti.getOrderNumber()+" orderDate= "+ordersEntiti.getOrderDate()+" status - "+ordersEntiti.getStatus());
+        }
+        //System.out.println(resultNoShipped);
 
 
 
