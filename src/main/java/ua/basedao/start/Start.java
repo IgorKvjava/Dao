@@ -12,6 +12,7 @@ import ua.basedao.util.HibernateSessionFactory;
 import java.sql.Date;
 import java.time.Year;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -54,6 +55,17 @@ public class Start {
         System.out.println("-----------Date Sort-------");
         System.out.println(resultsDateSort);
         //----------------------------------------------------------------------------------------------------------
+        Criteria crFrance = session.createCriteria(CustomersEntiti.class);
+        crFrance.add(Restrictions.eq("country", "France"));
+        List resultFranseId=crFrance.list();
+        for (Iterator iterator = resultFranseId.iterator(); iterator.hasNext();){
+            Criteria crPaymentsFrance =session.createCriteria(PaymentsEntiti.class);
+            CustomersEntiti customersEntiti=(CustomersEntiti) iterator.next();
+            crPaymentsFrance.add(Restrictions.eq("customerNumber",customersEntiti.getCustomerNumber()));
+           System.out.println("id = "+customersEntiti.getCustomerNumber() +" country - "+customersEntiti.getCountry()+" ");
+            System.out.println(crPaymentsFrance.list());
+
+        }
 
 
 
