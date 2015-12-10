@@ -8,15 +8,14 @@
     <property name="connection.url">jdbc:mysql://localhost:3306/classicmodels</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.show_sql">true</property>
+
+
     <!--Работа в потоке-->
     <property name="hibernate.current_session_context_class">thread</property>
+       <property name="connection.username">root</property>
+      <property name="connection.password">123</property>
 
-
-    <property name="connection.username">root</property>
-    <property name="connection.password">123</property>
-
-
-    <property name="hbm2ddl.auto">update</property>
+      <property name="hbm2ddl.auto">update</property>
 
     <mapping resource="CustomersEntiti.hbm.xml"/>
     <mapping class="ua.basedao.entiti.CustomersEntiti"/>
@@ -24,14 +23,15 @@
     <mapping class="ua.basedao.entiti.EmployeesEntiti"/>
     <mapping resource="OfficesEntiti.hbm.xml"/>
     <mapping class="ua.basedao.entiti.OfficesEntiti"/>
-    <mapping resource="OrderdetailsEntiti.hbm.xml"/>
-    <mapping class="ua.basedao.entiti.OrderdetailsEntiti"/>
     <mapping resource="ProductlinesEntiti.hbm.xml"/>
     <mapping class="ua.basedao.entiti.ProductlinesEntiti"/>
     <mapping resource="ProductsEntiti.hbm.xml"/>
     <mapping class="ua.basedao.entiti.ProductsEntiti"/>
+      <mapping resource="PaymentsEntiti.hbm.xml"/>
+      <mapping class="ua.basedao.entiti.PaymentsEntiti"/>
 
-    <!-- DB schema will be updated if needed -->
+
+      <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>

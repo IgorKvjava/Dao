@@ -40,6 +40,8 @@ public class Start {
         System.out.println("contact FirstName starting with -J- and having credit limit more than 100 000");
         System.out.println(resultsChoice);
         //----------------------------------------------------------------------------------------------
+        //Criteria crAmount = session.createCriteria(CustomersEntiti.class);
+        //Criterion dateSort=Restrictions.gt("creditLimit",creditLimitN);
 
 
 

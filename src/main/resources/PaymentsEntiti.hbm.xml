@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ua.basedao.entiti.PaymentsEntiti" table="payments" schema="classicmodels">
+        <composite-id mapped="true" class="ua.basedao.entiti.PaymentsEntitiPK">
+            <key-property name="customerNumber" column="customerNumber"/>
+            <key-property name="checkNumber" column="checkNumber"/>
+        </composite-id>
+        <property name="paymentDate" column="paymentDate"/>
+        <property name="amount" column="amount"/>
+    </class>
+</hibernate-mapping>
