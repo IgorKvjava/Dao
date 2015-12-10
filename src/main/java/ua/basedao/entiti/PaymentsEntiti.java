@@ -2,6 +2,7 @@ package ua.basedao.entiti;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created by liny on 10.12.15.
@@ -12,8 +13,27 @@ import java.io.Serializable;
 public class PaymentsEntiti {
     private int customerNumber;
     private String checkNumber;
-    private Serializable paymentDate;
+    private Date paymentDate;
     private double amount;
+
+    public PaymentsEntiti() {
+    }
+
+    public PaymentsEntiti(int customerNumber, String checkNumber, Date paymentDate, double amount) {
+        this.customerNumber = customerNumber;
+        this.checkNumber = checkNumber;
+        this.paymentDate = paymentDate;
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return  "customerNumber=" + customerNumber +
+                ", checkNumber='" + checkNumber + '\'' +
+                ", paymentDate=" + paymentDate +
+                ", amount=" + amount +
+                "\n";
+    }
 
     @Id
     @Column(name = "customerNumber")
@@ -37,11 +57,11 @@ public class PaymentsEntiti {
 
     @Basic
     @Column(name = "paymentDate")
-    public Serializable getPaymentDate() {
+    public Date getPaymentDate() {
         return paymentDate;
     }
 
-    public void setPaymentDate(Serializable paymentDate) {
+    public void setPaymentDate(Date paymentDate) {
         this.paymentDate = paymentDate;
     }
 
