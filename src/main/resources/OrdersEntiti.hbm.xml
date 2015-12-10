@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ua.basedao.entiti.OrdersEntiti" table="orders" schema="classicmodels">
+        <id name="orderNumber" column="orderNumber"/>
+        <property name="orderDate" column="orderDate"/>
+        <property name="requiredDate" column="requiredDate"/>
+        <property name="shippedDate" column="shippedDate"/>
+        <property name="status" column="status"/>
+        <property name="comments" column="comments"/>
+        <property name="customerNumber" column="customerNumber"/>
+    </class>
+</hibernate-mapping>
