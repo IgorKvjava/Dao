@@ -18,6 +18,33 @@ public class OrdersEntiti {
     private String comments;
     private int customerNumber;
 
+    @Override
+    public String toString() {
+        return "OrdersEntiti{" +
+                "orderNumber=" + orderNumber +
+                ", orderDate=" + orderDate +
+                ", requiredDate=" + requiredDate +
+                ", shippedDate=" + shippedDate +
+                ", status='" + status + '\'' +
+                ", comments='" + comments + '\'' +
+                ", customerNumber=" + customerNumber +
+                '}'+"\n";
+    }
+
+    public OrdersEntiti() {
+    }
+
+    public OrdersEntiti(int orderNumber, Date orderDate, Date requiredDate, Date shippedDate,
+                        String status, String comments, int customerNumber) {
+        this.orderNumber = orderNumber;
+        this.orderDate = orderDate;
+        this.requiredDate = requiredDate;
+        this.shippedDate = shippedDate;
+        this.status = status;
+        this.comments = comments;
+        this.customerNumber = customerNumber;
+    }
+
     @Id
     @Column(name = "orderNumber")
     public int getOrderNumber() {

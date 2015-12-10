@@ -7,6 +7,7 @@ import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import ua.basedao.entiti.CustomersEntiti;
+import ua.basedao.entiti.OrdersEntiti;
 import ua.basedao.entiti.PaymentsEntiti;
 import ua.basedao.util.HibernateSessionFactory;
 import java.sql.Date;
@@ -64,8 +65,9 @@ public class Start {
             crPaymentsFrance.add(Restrictions.eq("customerNumber",customersEntiti.getCustomerNumber()));
            System.out.println("id = "+customersEntiti.getCustomerNumber() +" country - "+customersEntiti.getCountry()+" ");
             System.out.println(crPaymentsFrance.list());
-
         }
+        List resultNoShipped=session.createCriteria(OrdersEntiti.class).add(Restrictions.not(Restrictions.eq("status","Shipped"))).list();
+        System.out.println(resultNoShipped);
 
 
 
