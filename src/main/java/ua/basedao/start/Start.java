@@ -45,17 +45,15 @@ public class Start {
         System.out.println(resultsChoice);
         //----------------------------------------------------------------------------------------------
         Criteria criAmount = session.createCriteria(PaymentsEntiti.class);
-        Date date1 = new Date(104,00,01);
-        Date date2 = new Date(105,00,01);
-
-
+        Date date1 = new Date(104,04,01);
+        Date date2 = new Date(104,06,31);
         System.out.println(date1+" "+date2);
-
         criAmount.add(Restrictions.between("paymentDate",date1,date2));
         criAmount.addOrder(Order.asc("paymentDate"));
         List resultsDateSort=criAmount.list();
         System.out.println("-----------Date Sort-------");
         System.out.println(resultsDateSort);
+        //----------------------------------------------------------------------------------------------------------
 
 
 
