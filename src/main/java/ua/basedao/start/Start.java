@@ -83,7 +83,7 @@ public class Start {
             System.out.println( "| Costumer namber- "+ordersEntiti.getCustomerNumber()+
                     "| Order Number- "+ordersEntiti.getOrderNumber()+"" +
                     "| OrderDate= "+ordersEntiti.getOrderDate()+"| status - "+ordersEntiti.getStatus()+
-                    "| Costumer - " +customersEntiti.getCustomerName()+ "| |"+customersEntiti.getCustomerNumber());
+                    "  | Costumer - " +customersEntiti.getCustomerName());
         }
         //System.out.println(resultNoShipped);
 
