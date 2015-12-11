@@ -11,8 +11,6 @@ import ua.basedao.entiti.OrdersEntiti;
 import ua.basedao.entiti.PaymentsEntiti;
 import ua.basedao.util.HibernateSessionFactory;
 import java.sql.Date;
-import java.time.Year;
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
@@ -64,18 +62,28 @@ public class Start {
         crFrance.add(Restrictions.eq("country", "France"));
         List resultFranseId=crFrance.list();
         for (Iterator iterator = resultFranseId.iterator(); iterator.hasNext();){
+            //запрос критерия таб платежи
             Criteria crPaymentsFrance =session.createCriteria(PaymentsEntiti.class);
+            //выбор поля таб костумерс
             CustomersEntiti customersEntiti=(CustomersEntiti) iterator.next();
+            //составления спика с таб платежи, по номеру контрагента по выборке с таблицы контрагенты
             crPaymentsFrance.add(Restrictions.eq("customerNumber",customersEntiti.getCustomerNumber()));
            System.out.println("id = "+customersEntiti.getCustomerNumber() +" country - "+customersEntiti.getCountry()+" ");
             System.out.println(crPaymentsFrance.list());
         }
         //5. Выбрать названия контрагентов, номера, даты и статусы заказов, не находящихся в статусе «Доставлено» (Shipped)
-        List resultNoShipped=session.createCriteria(OrdersEntiti.class).add(Restrictions.not(Restrictions.eq("status","Shipped"))).list();
+        List resultNoShipped=session.createCriteria(OrdersEntiti.class).add
+                (Restrictions.not(Restrictions.eq("status","Shipped"))).list();
         for (Iterator iterator = resultNoShipped.iterator(); iterator.hasNext();){
             OrdersEntiti ordersEntiti=(OrdersEntiti) iterator.next();
-            System.out.println( "| Costumer namber- "+ordersEntiti.getCustomerNumber()+"| Order Number- "+ordersEntiti.getOrderNumber()+"" +
-                    "| OrderDate= "+ordersEntiti.getOrderDate()+"| status - "+ordersEntiti.getStatus() );
+            //
+            Criteria criCustomersEntiti= session.createCriteria(CustomersEntiti.class);
+            Iterator iteratorRes=criCustomersEntiti.add(Restrictions.eq("customerNumber",ordersEntiti.getCustomerNumber())).list().iterator();
+            CustomersEntiti customersEntiti=(CustomersEntiti) iteratorRes.next();
+            System.out.println( "| Costumer namber- "+ordersEntiti.getCustomerNumber()+
+                    "| Order Number- "+ordersEntiti.getOrderNumber()+"" +
+                    "| OrderDate= "+ordersEntiti.getOrderDate()+"| status - "+ordersEntiti.getStatus()+
+                    "| Costumer - " +customersEntiti.getCustomerName()+ "| |"+customersEntiti.getCustomerNumber());
         }
         //System.out.println(resultNoShipped);
 
