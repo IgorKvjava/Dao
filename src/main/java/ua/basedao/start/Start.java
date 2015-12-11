@@ -2,10 +2,7 @@ package ua.basedao.start;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.LogicalExpression;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
 import ua.basedao.entiti.CustomersEntiti;
 import ua.basedao.entiti.OrdersEntiti;
 import ua.basedao.entiti.PaymentsEntiti;
@@ -85,7 +82,12 @@ public class Start {
                     "| OrderDate= "+ordersEntiti.getOrderDate()+"| status - "+ordersEntiti.getStatus()+
                     "  | Costumer - " +customersEntiti.getCustomerName());
         }
-        //System.out.println(resultNoShipped);
+        //6. Выбрать названия контрагентов и количества их заказов и платежей, при отсутствии значения для контрагента - выводить 0
+        Criteria countPayments=session.createCriteria(PaymentsEntiti.class);
+        List<PaymentsEntiti> listCountPayments=countPayments.setProjection(Projections.countDistinct("customerNumber")).list();
+        System.out.println(listCountPayments);
+
+
 
 
 
